@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmSeed.Domain", "MvvmSeed
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmSeed.Application", "MvvmSeed.Application\MvvmSeed.Application.csproj", "{FDB3F2EB-4B19-40FE-8F9E-BE77ECDD2E01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmSeed.UnitTests", "MvvmSeed.UnitTests\MvvmSeed.UnitTests.csproj", "{E9717C8C-2632-4C92-8A37-D92EC81D6635}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,18 @@ Global
 		{FDB3F2EB-4B19-40FE-8F9E-BE77ECDD2E01}.Release|x64.Build.0 = Release|x64
 		{FDB3F2EB-4B19-40FE-8F9E-BE77ECDD2E01}.Release|x86.ActiveCfg = Release|x86
 		{FDB3F2EB-4B19-40FE-8F9E-BE77ECDD2E01}.Release|x86.Build.0 = Release|x86
+		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Debug|x64.ActiveCfg = Debug|x64
+		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Debug|x64.Build.0 = Debug|x64
+		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Debug|x86.ActiveCfg = Debug|x86
+		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Debug|x86.Build.0 = Debug|x86
+		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Release|x64.ActiveCfg = Release|x64
+		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Release|x64.Build.0 = Release|x64
+		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Release|x86.ActiveCfg = Release|x86
+		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
