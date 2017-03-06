@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.4.0" />
+    <PackageReference Include="Autofac.Extras.MvvmCross" Version="4.0.2" />
     <PackageReference Include="MvvmCross" Version="4.4.0" />
   </ItemGroup>
 
