@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <PackageTargetFallback>
+      $(PackageTargetFallback);portable-net45+netcore45
+    </PackageTargetFallback>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MvvmSeed.Domain\MvvmSeed.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
