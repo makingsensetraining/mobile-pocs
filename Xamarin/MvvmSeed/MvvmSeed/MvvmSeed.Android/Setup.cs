@@ -27,6 +27,10 @@ namespace MvvmSeed.Android
                 .As<IMvxViewModel, MvxViewModel>()
                 .AsSelf();
 
+            // TODO [TechnicalDebt | WIP] Improve DbContext initialization
+            // Set platform-specific path to local app data folder
+            containerBuilder.Register(c => System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal)).Named<string>(App.BootstrapParamaters.LocalAppDataFolder);
+
             return new AutofacMvxIocProvider(containerBuilder.Build());
         }
     }
