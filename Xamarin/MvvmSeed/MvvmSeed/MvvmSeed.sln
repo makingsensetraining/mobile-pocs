@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmSeed.Application", "Mvv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmSeed.UnitTests", "MvvmSeed.UnitTests\MvvmSeed.UnitTests.csproj", "{E9717C8C-2632-4C92-8A37-D92EC81D6635}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmSeed.MigrationsTool", "MvvmSeed.MigrationsTool\MvvmSeed.MigrationsTool.csproj", "{1BBC455F-D2A0-48A1-A4F0-DE2432B4EC5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,18 @@ Global
 		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Release|x64.Build.0 = Release|x64
 		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Release|x86.ActiveCfg = Release|x86
 		{E9717C8C-2632-4C92-8A37-D92EC81D6635}.Release|x86.Build.0 = Release|x86
+		{1BBC455F-D2A0-48A1-A4F0-DE2432B4EC5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BBC455F-D2A0-48A1-A4F0-DE2432B4EC5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BBC455F-D2A0-48A1-A4F0-DE2432B4EC5A}.Debug|x64.ActiveCfg = Debug|x64
+		{1BBC455F-D2A0-48A1-A4F0-DE2432B4EC5A}.Debug|x64.Build.0 = Debug|x64
+		{1BBC455F-D2A0-48A1-A4F0-DE2432B4EC5A}.Debug|x86.ActiveCfg = Debug|x86
+		{1BBC455F-D2A0-48A1-A4F0-DE2432B4EC5A}.Debug|x86.Build.0 = Debug|x86
+		{1BBC455F-D2A0-48A1-A4F0-DE2432B4EC5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BBC455F-D2A0-48A1-A4F0-DE2432B4EC5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BBC455F-D2A0-48A1-A4F0-DE2432B4EC5A}.Release|x64.ActiveCfg = Release|x64
+		{1BBC455F-D2A0-48A1-A4F0-DE2432B4EC5A}.Release|x64.Build.0 = Release|x64
+		{1BBC455F-D2A0-48A1-A4F0-DE2432B4EC5A}.Release|x86.ActiveCfg = Release|x86
+		{1BBC455F-D2A0-48A1-A4F0-DE2432B4EC5A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
