@@ -11,11 +11,10 @@ namespace MvvmSeed.Domain.Model.Migrations
                 name: "RandomizedStrings",
                 columns: table => new
                 {
-                    Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<long>(nullable: false).Annotation("Sqlite:Autoincrement", true),
                     LastTransformationTimestamp = table.Column<DateTimeOffset>(nullable: false),
                     LastTransformationValue = table.Column<string>(nullable: true),
-                    SampleTransformationCount = table.Column<int>(nullable: false)
+                    RandomizationCount = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

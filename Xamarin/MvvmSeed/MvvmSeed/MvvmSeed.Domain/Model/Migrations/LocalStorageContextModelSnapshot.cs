@@ -19,7 +19,7 @@ namespace MvvmSeed.Domain.Model.Migrations
 
                     b.Property<string>("LastTransformationValue");
 
-                    b.Property<int>("SampleTransformationCount");
+                    b.Property<int>("RandomizationCount");
 
                     b.HasKey("Id");
 

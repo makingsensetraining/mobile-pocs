@@ -17,7 +17,7 @@ namespace MvvmSeed.Domain.Model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!string.IsNullOrEmpty(_databasePath))
+            if (!string.IsNullOrEmpty(_databasePath))//Providing a databasePath means we want to use Sqlite. No path means InMemory provider (used for UTs)
                 optionsBuilder.UseSqlite($"Filename={_databasePath}");
         }
     }
