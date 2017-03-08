@@ -23,7 +23,7 @@ namespace MvvmSeed.Domain.Services
 
             var lastRandomizedString = GetLastEntyFromDb() ?? new RandomizedString();
             lastRandomizedString.LastTransformationTimestamp = DateTimeOffset.UtcNow;
-            lastRandomizedString.SampleTransformationCount++;
+            lastRandomizedString.RandomizationCount++;
             lastRandomizedString.LastTransformationValue = randomizedString;
             if (lastRandomizedString.Id == 0)
                 _dbContext.Add(lastRandomizedString);
@@ -34,7 +34,7 @@ namespace MvvmSeed.Domain.Services
 
         public DateTimeOffset LastRandomizationTimestamp => GetLastEntyFromDb()?.LastTransformationTimestamp ??  DateTimeOffset.MinValue;
 
-        public int RandomizationsCount => GetLastEntyFromDb()?.SampleTransformationCount ?? 0;
+        public int RandomizationsCount => GetLastEntyFromDb()?.RandomizationCount ?? 0;
 
         public string LastRandomizedValue => GetLastEntyFromDb()?.LastTransformationValue ?? "Hello World!";
 

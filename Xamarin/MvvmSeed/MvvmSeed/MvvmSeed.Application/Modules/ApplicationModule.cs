@@ -1,5 +1,6 @@
-﻿using Autofac;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.IO;
+using Autofac;
 using MvvmCross.Core.ViewModels;
 using MvvmSeed.Application.ViewModels;
 using MvvmSeed.Domain.Model;
@@ -21,9 +22,31 @@ namespace MvvmSeed.Application.Modules
 
         private LocalStorageContext InitializeLocalStorageContext(string dbPath)
         {
-            var dbContext = new LocalStorageContext(dbPath);
-            dbContext.Database.Migrate();
-            return dbContext;
+            try
+            {
+                var filePath = Path.Combine(dbPath, "localStorage.db");
+                if (Directory.Exists(dbPath))
+                {
+                    if (!File.Exists(filePath))
+                    {
+                        using (var stream = File.Create(filePath))
+                        {
+                            
+                        }
+                        
+                    }
+                }
+
+                var dbContext = new LocalStorageContext(Path.Combine(dbPath, "localStorage.db"));
+                dbContext.Database.EnsureCreated();
+                return dbContext;
+            }
+            catch (Exception e)
+            {
+                var msg = e.Message;
+                return null;
+            }
+            
         }
     }
 }

@@ -4,20 +4,21 @@ namespace MvvmSeed.Domain.Model
 {
     public class LocalStorageContext : DbContext
     {
-        public DbSet<RandomizedString> RandomizedStrings { get; set; }
+        private readonly string _databasePath;
 
-        private string DatabasePath { get; set; }
-
-        public LocalStorageContext() { }
+        public LocalStorageContext(DbContextOptions optionsBuilder) : base(optionsBuilder) { }
 
         public LocalStorageContext(string databasePath)
         {
-            DatabasePath = databasePath;
+            _databasePath = databasePath;
         }
+
+        public DbSet<RandomizedString> RandomizedStrings { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite($"Filename={DatabasePath}");
+            if (!string.IsNullOrEmpty(_databasePath))
+                optionsBuilder.UseSqlite($"Filename={_databasePath}");
         }
     }
 }

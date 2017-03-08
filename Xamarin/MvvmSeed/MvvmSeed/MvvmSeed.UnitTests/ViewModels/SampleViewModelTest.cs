@@ -5,7 +5,7 @@ using MvvmSeed.Application.ViewModels;
 using MvvmSeed.Domain.Services;
 using Xunit;
 
-namespace MvvmSeed.UnitTests
+namespace MvvmSeed.UnitTests.ViewModels
 {
     public class SampleViewModelTest
     {

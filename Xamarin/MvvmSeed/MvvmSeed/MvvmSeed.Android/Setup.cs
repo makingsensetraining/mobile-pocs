@@ -1,4 +1,3 @@
-using System.IO;
 using Android.Content;
 using Autofac;
 using Autofac.Extras.MvvmCross;
@@ -28,8 +27,8 @@ namespace MvvmSeed.Android
                 .As<IMvxViewModel, MvxViewModel>()
                 .AsSelf();
 
-            // TODO [WIP] Handle Db path better
-            containerBuilder.Register(c => Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "localStorage.db")).Named<string>("dbPath");
+            // Set platform-specific path to local app data folder
+            containerBuilder.Register(c => System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal)).Named<string>(App.LocalAppDataFolderParameterName);
 
             return new AutofacMvxIocProvider(containerBuilder.Build());
         }
