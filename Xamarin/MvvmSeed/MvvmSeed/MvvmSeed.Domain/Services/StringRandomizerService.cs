@@ -5,15 +5,15 @@ using MvvmSeed.Domain.Model;
 namespace MvvmSeed.Domain.Services
 {
     /// <summary>
-    /// Simple implementation of <see cref="IStringRandomizerService"/> that stores randomization info on a local database (Realm)
+    /// Simple implementation of <see cref="IStringRandomizerService"/> that stores randomization info on local storage
     /// </summary>
     public class StringRandomizerService : IStringRandomizerService
     {
-        private readonly LocalStorageContext _dbContext;
+        private readonly LocalStorageContext _localStorage;
 
-        public StringRandomizerService(LocalStorageContext dbContext)
+        public StringRandomizerService(LocalStorageContext localStorage)
         {
-            _dbContext = dbContext;
+            _localStorage = localStorage;
         }
 
         public string RandomizeString(string input)
@@ -26,9 +26,9 @@ namespace MvvmSeed.Domain.Services
             lastRandomizedString.RandomizationCount++;
             lastRandomizedString.LastTransformationValue = randomizedString;
             if (lastRandomizedString.Id == 0)
-                _dbContext.Add(lastRandomizedString);
+                _localStorage.Add(lastRandomizedString);
 
-            _dbContext.SaveChanges();
+            _localStorage.SaveChanges();
             return randomizedString;
         }
 
@@ -38,7 +38,6 @@ namespace MvvmSeed.Domain.Services
 
         public string LastRandomizedValue => GetLastEntyFromDb()?.LastTransformationValue ?? "Hello World!";
 
-        private RandomizedString GetLastEntyFromDb() => _dbContext.RandomizedStrings.FirstOrDefault();
-
+        private RandomizedString GetLastEntyFromDb() => _localStorage.RandomizedStrings.FirstOrDefault();
     }
 }

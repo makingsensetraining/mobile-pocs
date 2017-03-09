@@ -2,23 +2,22 @@
 
 namespace MvvmSeed.Domain.Model
 {
-    public class LocalStorageContext : DbContext
+    public class LocalStorageContext : DbContextBase
     {
-        private readonly string _databasePath;
+        private const string DatabaseName = "LocalStorage.db";
 
+        /// <summary>
+        /// Initializes an InMemory database context to be used on UnitTests
+        /// </summary>
+        /// <param name="optionsBuilder"><see cref="DbContextOptions"/> specifying 'UseInMemoryDatabase' option</param>
         public LocalStorageContext(DbContextOptions optionsBuilder) : base(optionsBuilder) { }
 
-        public LocalStorageContext(string databasePath)
-        {
-            _databasePath = databasePath;
-        }
+        /// <summary>
+        /// Initializes a Sqlite database context
+        /// </summary>
+        /// <param name="databaseFolder">Full path where the database will be created/open </param>
+        public LocalStorageContext(string databaseFolder) : base(databaseFolder, DatabaseName) { }
 
         public DbSet<RandomizedString> RandomizedStrings { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!string.IsNullOrEmpty(_databasePath))//Providing a databasePath means we want to use Sqlite. No path means InMemory provider (used for UTs)
-                optionsBuilder.UseSqlite($"Filename={_databasePath}");
-        }
     }
 }

@@ -3,7 +3,7 @@ using MvvmCross.Droid.Views;
 
 namespace MvvmSeed.Android.Views
 {
-    [Activity(Label = "Sample", MainLauncher = true)]
+    [Activity]
     public class SampleView : MvxActivity
     {
         protected override void OnViewModelSet()
