@@ -4,6 +4,9 @@ namespace MvvmSeed.Application
 {
     public class App : MvxApplication
     {
-        //Placeholder for app-specific configurations
+        public static class BootstrapParamaters
+        {
+            public const string LocalAppDataFolder = "LocalAppDataFolder";
+        }
     }
 }
