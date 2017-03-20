@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C53976E1E8070E7003C772F /* MSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C53976D1E8070E7003C772F /* MSButton.swift */; };
 		9CA0ADBC1E7C75EB00FD13C5 /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CA0ADBB1E7C75EB00FD13C5 /* Second.storyboard */; };
 		9CA0ADBE1E7C75F700FD13C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0ADBD1E7C75F700FD13C5 /* ViewController.swift */; };
 		9CC3846F1E7C17AD00595171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC3846E1E7C17AD00595171 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C53976D1E8070E7003C772F /* MSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSButton.swift; path = Interfaces/Components/MSButton.swift; sourceTree = "<group>"; };
 		9CA0ADBB1E7C75EB00FD13C5 /* Second.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Second.storyboard; path = Interfaces/Storyboards/Second.storyboard; sourceTree = "<group>"; };
 		9CA0ADBD1E7C75F700FD13C5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Interfaces/ViewControllers/ViewController.swift; sourceTree = "<group>"; };
 		9CC3846B1E7C17AD00595171 /* SwiftSeedProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSeedProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C53976F1E8070ED003C772F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9C53976D1E8070E7003C772F /* MSButton.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		9CA0ADB91E7C75AD00FD13C5 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,7 @@
 		9CC384831E7C298700595171 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				9C53976F1E8070ED003C772F /* Components */,
 				9CC384851E7C299E00595171 /* ViewControllers */,
 				9CC384841E7C298D00595171 /* Storyboards */,
 			);
@@ -193,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CA0ADBE1E7C75F700FD13C5 /* ViewController.swift in Sources */,
+				9C53976E1E8070E7003C772F /* MSButton.swift in Sources */,
 				9CC3846F1E7C17AD00595171 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
