@@ -18,8 +18,8 @@ class AddPersonViewController: UIViewController {
     }
 
     @IBAction func btnAddPersonTouchUpInsided(_ sender: Any) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext //Not sure if there's a better way to handle context rather than this way.
-        let person =  Person(context: context) 
+        
+        let person =  Person(context: DataLocator.sharedInstance.context!)
         person.name = txtFieldName.text!
         
         //Save  data to coredata
