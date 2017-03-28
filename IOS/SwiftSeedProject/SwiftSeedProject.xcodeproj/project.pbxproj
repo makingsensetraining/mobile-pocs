@@ -10,6 +10,7 @@
 		1B63BCE91FF3AA16E9FFAC84 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A85CC59BA537A276A817BB /* CoreTelephony.framework */; };
 		33133BF238CF766D88ED8480 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F4ED6F4D5BB2A97773D62CA /* AVFoundation.framework */; };
 		59ADE8829D514D02E888424F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B4874100378DA5694BCD4D /* AssetsLibrary.framework */; };
+		6D3590322E34942BA00DC2FE /* Pods_SwiftSeedProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00823DB72489D4350397DF7 /* Pods_SwiftSeedProject.framework */; };
 		7756CE998F9CADBB8A4A30FF /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 382E735B1C627FD14D1391FE /* BuddyBuildSDK.framework */; };
 		78302AB7BC0626EDDA438F35 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2531E6BE05B304226CCF4B /* CoreText.framework */; };
 		85E944DE0F557C0DEC7F11B2 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA7E54BD78DF8316D3D4AC9 /* CoreVideo.framework */; };
@@ -33,6 +34,7 @@
 		382E735B1C627FD14D1391FE /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		3FF2003A7FA62CBCEAE2C528 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7576EABBB8E9CBEF425A59D9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		86F0727D56F2C8393AF9B574 /* Pods-SwiftSeedProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSeedProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftSeedProject/Pods-SwiftSeedProject.debug.xcconfig"; sourceTree = "<group>"; };
 		8BA7E54BD78DF8316D3D4AC9 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		8F193489F1C2998B49521D08 /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		9C53976D1E8070E7003C772F /* MSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSButton.swift; path = Interfaces/Components/MSButton.swift; sourceTree = "<group>"; };
@@ -45,6 +47,8 @@
 		9CC384781E7C17AD00595171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CC3847A1E7C17AD00595171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CC3848B1E7C576800595171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/First.storyboard; sourceTree = "<group>"; };
+		9E68DCFB7C453F59CFDA6D5D /* Pods-SwiftSeedProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSeedProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftSeedProject/Pods-SwiftSeedProject.release.xcconfig"; sourceTree = "<group>"; };
+		C00823DB72489D4350397DF7 /* Pods_SwiftSeedProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftSeedProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB2531E6BE05B304226CCF4B /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		F5B4874100378DA5694BCD4D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -63,6 +67,7 @@
 				33133BF238CF766D88ED8480 /* AVFoundation.framework in Frameworks */,
 				E33C0DD2D3B540E021E9BAA6 /* CoreMedia.framework in Frameworks */,
 				85E944DE0F557C0DEC7F11B2 /* CoreVideo.framework in Frameworks */,
+				6D3590322E34942BA00DC2FE /* Pods_SwiftSeedProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +110,7 @@
 				9CC3846C1E7C17AD00595171 /* Products */,
 				CE9C3390B5DEB71D6A479326 /* Frameworks */,
 				8F193489F1C2998B49521D08 /* Bridging-Header.h */,
+				CA9B7FDFFC6748F0AEFD0744 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +165,15 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		CA9B7FDFFC6748F0AEFD0744 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86F0727D56F2C8393AF9B574 /* Pods-SwiftSeedProject.debug.xcconfig */,
+				9E68DCFB7C453F59CFDA6D5D /* Pods-SwiftSeedProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CE9C3390B5DEB71D6A479326 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +186,7 @@
 				0F4ED6F4D5BB2A97773D62CA /* AVFoundation.framework */,
 				164F9150B8A87DAFC813001D /* CoreMedia.framework */,
 				8BA7E54BD78DF8316D3D4AC9 /* CoreVideo.framework */,
+				C00823DB72489D4350397DF7 /* Pods_SwiftSeedProject.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -182,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CC3847D1E7C17AD00595171 /* Build configuration list for PBXNativeTarget "SwiftSeedProject" */;
 			buildPhases = (
+				6BC4350D8B9B240F59FE1F74 /* [CP] Check Pods Manifest.lock */,
 				9CC384671E7C17AD00595171 /* Sources */,
 				9CC384681E7C17AD00595171 /* Frameworks */,
 				9CC384691E7C17AD00595171 /* Resources */,
+				CBD3543848D7523911540BEB /* [CP] Embed Pods Frameworks */,
+				305D960645A046C2E09F70E7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +226,7 @@
 				TargetAttributes = {
 					9CC3846A1E7C17AD00595171 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = PUJ6PNMS7U;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -243,6 +263,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		305D960645A046C2E09F70E7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftSeedProject/Pods-SwiftSeedProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BC4350D8B9B240F59FE1F74 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CBD3543848D7523911540BEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftSeedProject/Pods-SwiftSeedProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9CC384671E7C17AD00595171 /* Sources */ = {
@@ -380,8 +448,10 @@
 		};
 		9CC3847E1E7C17AD00595171 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86F0727D56F2C8393AF9B574 /* Pods-SwiftSeedProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PUJ6PNMS7U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -397,8 +467,10 @@
 		};
 		9CC3847F1E7C17AD00595171 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E68DCFB7C453F59CFDA6D5D /* Pods-SwiftSeedProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PUJ6PNMS7U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
