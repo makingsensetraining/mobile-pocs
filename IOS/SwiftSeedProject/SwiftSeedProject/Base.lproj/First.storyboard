@@ -13,7 +13,7 @@
         <!--FIRST-->
         <scene sceneID="EDc-bR-YIA">
             <objects>
-                <viewController title="FIRST" id="DYP-ok-hYl" sceneMemberID="viewController">
+                <viewController title="FIRST" id="DYP-ok-hYl" customClass="LoginViewController" customModule="SwiftSeedProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cPQ-e6-nZK"/>
                         <viewControllerLayoutGuide type="bottom" id="hx1-pj-XHZ"/>
@@ -50,6 +50,20 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="105-7q-uYu">
+                                <rect key="frame" x="89" y="372" width="217" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o2P-Nb-K5k">
+                                <rect key="frame" x="89" y="429" width="217" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40477055649999999" blue="0.50730378809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -59,6 +73,11 @@
                             <constraint firstItem="6ge-4h-mx1" firstAttribute="top" secondItem="cPQ-e6-nZK" secondAttribute="bottom" constant="200" id="eql-Jf-NYc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="105-7q-uYu" id="leD-3J-AQd"/>
+                        <outlet property="loginButton" destination="6ge-4h-mx1" id="azI-jl-iTB"/>
+                        <outlet property="passwordTextField" destination="o2P-Nb-K5k" id="dGm-Ve-tbT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wP4-XS-m2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

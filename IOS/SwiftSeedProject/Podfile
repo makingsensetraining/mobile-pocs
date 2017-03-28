@@ -6,5 +6,6 @@ target 'SwiftSeedProject' do
   use_frameworks!
 
   # Pods for SwiftSeedProject
+  pod 'Bond', '6.2.1'
 
 end
