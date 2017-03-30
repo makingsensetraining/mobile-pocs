@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class User {
+class UserM {
     
     var id: String?
     var name: String?
@@ -34,7 +34,7 @@ class User {
     }
 }
 
-extension User {
+extension UserM {
     
     func toParameters() -> [String : AnyObject] {
         var parameters: [String : Any] = [:]

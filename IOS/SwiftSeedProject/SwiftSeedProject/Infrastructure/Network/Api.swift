@@ -13,10 +13,10 @@ import SwiftyJSON
 final class Api {
     // MARK: - Private Properties
     private let manager: ApiManagerProtocol
-    private let processUser: (Result<JSON>, (ApiResult<User>) -> Void) -> Void = { result, completion in
+    private let processUser: (Result<JSON>, (ApiResult<UserM>) -> Void) -> Void = { result, completion in
         switch result {
             case .success(let json):
-                let user = User(json: json)
+                let user = UserM(json: json)
                 completion(ApiResult{ return user })
             case .failure(let error):
                 completion(ApiResult{ throw error })
@@ -29,7 +29,7 @@ final class Api {
     }
     
     // MARK: - Public Methods
-    func getUser(userId: String, completion: @escaping (ApiResult<User>) -> Void) {
+    func getUser(userId: String, completion: @escaping (ApiResult<UserM>) -> Void) {
         let _ = manager.apiRequest(endpoint: .GetUser(userId: userId)).apiResponse { [weak self] response in
             guard let strongSelf = self else {
                 return
@@ -38,8 +38,8 @@ final class Api {
         }
     }
     
-    func updateUser(user: User, completion: @escaping (ApiResult<User>) -> Void) {
-        let _ = manager.apiRequest(endpoint: .UpdateUser(userId: user.id!), parameters: user.toParameters()).apiResponse { [weak self] response in
+    func updateUser(user: UserM, completion: @escaping (ApiResult<UserM>) -> Void) {
+        let _ = manager.apiRequest(endpoint: .UpdateUser(userId: user.id!), parameters: user.toParameters(), headers: nil).apiResponse { [weak self] response in
             guard let strongSelf = self else {
                 return
             }
@@ -47,8 +47,8 @@ final class Api {
         }
     }
     
-    func createUser(user: User, completion: @escaping (ApiResult<User>) -> Void) {
-        let _ = manager.apiRequest(endpoint: .CreateUser(), parameters: user.toParameters()).apiResponse { [weak self] response in
+    func createUser(user: UserM, completion: @escaping (ApiResult<UserM>) -> Void) {
+        let _ = manager.apiRequest(endpoint: .CreateUser(), parameters: user.toParameters(), headers: nil).apiResponse { [weak self] response in
             guard let strongSelf = self else {
                 return
             }

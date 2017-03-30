@@ -12,7 +12,7 @@ class LoginViewModel {
     
     // TODO: Create a service for authentication and remove references to Api
     private let api: Api
-    private var user: User? {
+    private var user: UserM? {
         didSet {
             let user = self.user!
             self.name.value = user.name
@@ -22,6 +22,7 @@ class LoginViewModel {
     
     var name = Observable<String?>("")
     var email = Observable<String?>("")
+    var password = Observable<String?>("")
     
     init(api: Api) {
         self.api = api
@@ -65,7 +66,7 @@ class LoginViewModel {
     }
     
     func createUser() {
-        let user = User(name: "Mike Insense", email: "minsense@makingsense.com")
+        let user = UserM(name: "Mike Insense", email: "minsense@makingsense.com")
         api.createUser(user: user) { [weak self] result in
             do {
                 guard let strongSelf = self else {
@@ -79,8 +80,11 @@ class LoginViewModel {
         }
     }
     
-    private func updateUserForResult(result: ApiResult<User>) throws {
+    private func updateUserForResult(result: ApiResult<UserM>) throws {
         self.user = try result.unwrap()
     }
     
+    func login()  {
+        // TODO: Implement dummy async login
+    }
 }
