@@ -23,4 +23,8 @@ The structure of the project is as follow:
 
 - [1. Initial Setup] (https://github.com/makingsensetraining/mobile-pocs/pull/2)
 - [2. MvvmCross integration] (https://github.com/makingsensetraining/mobile-pocs/pull/3)
-
+- [3. Autofac as IoC container] (https://github.com/makingsensetraining/mobile-pocs/pull/4)
+- [4. Local Storage]
+  - [4.1 RealmDb - Disregarded] (https://github.com/makingsensetraining/mobile-pocs/pull/5)
+  - [4.2 Entity Framework 7] (https://github.com/makingsensetraining/mobile-pocs/pull/6)
+- [5. App intialization improvements] (https://github.com/makingsensetraining/mobile-pocs/pull/7)
