@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--SECOND-->
         <scene sceneID="jxP-Ds-v39">
             <objects>
-                <viewController title="SECOND" id="OAz-bt-S22" sceneMemberID="viewController">
+                <viewController title="SECOND" id="OAz-bt-S22" customClass="PersonTableViewController" customModule="SwiftSeedProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0ym-fd-Yab"/>
                         <viewControllerLayoutGuide type="bottom" id="tZS-Fz-2wy"/>
@@ -21,23 +22,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P83-pN-eog">
-                                <rect key="frame" x="158" y="323" width="59" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Izf-Op-Uwg">
+                                <rect key="frame" x="28.5" y="50" width="318.5" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PersonCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" id="gRa-ye-nlJ" customClass="PersonTableViewCell" customModule="SwiftSeedProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="318.5" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gRa-ye-nlJ" id="Hbj-Gd-ORy">
+                                            <rect key="frame" x="0.0" y="0.0" width="318.5" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dm5-U1-RQh">
+                                                    <rect key="frame" x="31" y="13" width="255" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dm5-U1-RQh" firstAttribute="centerX" secondItem="Hbj-Gd-ORy" secondAttribute="centerX" id="7Dm-EF-3PJ"/>
+                                                <constraint firstItem="dm5-U1-RQh" firstAttribute="centerY" secondItem="Hbj-Gd-ORy" secondAttribute="centerY" id="K9U-h9-5Ec"/>
+                                                <constraint firstItem="dm5-U1-RQh" firstAttribute="height" secondItem="Hbj-Gd-ORy" secondAttribute="height" multiplier="0.4" id="X2d-dj-49s"/>
+                                                <constraint firstItem="dm5-U1-RQh" firstAttribute="width" secondItem="Hbj-Gd-ORy" secondAttribute="width" multiplier="0.8" id="smO-oA-J4x"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblName" destination="dm5-U1-RQh" id="49F-TD-N9a"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.56202327029999999" green="0.72164272640000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="P83-pN-eog" firstAttribute="centerX" secondItem="7ML-l9-PZ1" secondAttribute="centerX" id="9EC-Cg-gkJ"/>
-                            <constraint firstItem="P83-pN-eog" firstAttribute="centerY" secondItem="7ML-l9-PZ1" secondAttribute="centerY" id="dYR-L6-BuQ"/>
+                            <constraint firstItem="Izf-Op-Uwg" firstAttribute="centerX" secondItem="7ML-l9-PZ1" secondAttribute="centerX" id="BVa-oo-jnS"/>
+                            <constraint firstItem="Izf-Op-Uwg" firstAttribute="height" secondItem="7ML-l9-PZ1" secondAttribute="height" multiplier="0.85" id="ER6-sX-c5x"/>
+                            <constraint firstItem="Izf-Op-Uwg" firstAttribute="width" secondItem="7ML-l9-PZ1" secondAttribute="width" multiplier="0.85" id="JHa-3i-BSr"/>
+                            <constraint firstItem="Izf-Op-Uwg" firstAttribute="centerY" secondItem="7ML-l9-PZ1" secondAttribute="centerY" id="v4b-fc-d4l"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tblView" destination="Izf-Op-Uwg" id="V5D-sj-f53"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V4w-vj-9NK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-185" y="649"/>
+            <point key="canvasLocation" x="-186.40000000000001" y="648.12593703148434"/>
         </scene>
     </scenes>
 </document>

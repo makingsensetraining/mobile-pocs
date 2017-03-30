@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C37A64C1E8BDA2300A0B8D7 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37A64B1E8BDA2300A0B8D7 /* DataProvider.swift */; };
+		9C37A6521E8BF5D700A0B8D7 /* PersonDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37A6511E8BF5D700A0B8D7 /* PersonDataModel.swift */; };
+		9C37A6541E8BF67E00A0B8D7 /* InMemoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37A6531E8BF67E00A0B8D7 /* InMemoryDataProvider.swift */; };
 		9C53976E1E8070E7003C772F /* MSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C53976D1E8070E7003C772F /* MSButton.swift */; };
+		9C81B4071E8AA47900C281B8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C81B4061E8AA47900C281B8 /* Person.swift */; };
+		9C81B40B1E8AA93C00C281B8 /* PersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C81B40A1E8AA93C00C281B8 /* PersonService.swift */; };
+		9C81B40E1E8AAF2F00C281B8 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C81B40D1E8AAF2F00C281B8 /* PersonTableViewCell.swift */; };
 		9CA0ADBC1E7C75EB00FD13C5 /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CA0ADBB1E7C75EB00FD13C5 /* Second.storyboard */; };
 		9CA0ADBE1E7C75F700FD13C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0ADBD1E7C75F700FD13C5 /* ViewController.swift */; };
 		9CC3846F1E7C17AD00595171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC3846E1E7C17AD00595171 /* AppDelegate.swift */; };
@@ -15,10 +21,17 @@
 		9CC384791E7C17AD00595171 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC384771E7C17AD00595171 /* LaunchScreen.storyboard */; };
 		9CC3848F1E7C5DCE00595171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC384721E7C17AD00595171 /* Main.storyboard */; };
 		9CC384901E7C5DCE00595171 /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC3848A1E7C576800595171 /* First.storyboard */; };
+		9CE8071E1E89AEEF001DEF3E /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE8071D1E89AEEF001DEF3E /* PersonTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C37A64B1E8BDA2300A0B8D7 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataProvider.swift; path = Domain/Protocols/DataProvider.swift; sourceTree = "<group>"; };
+		9C37A6511E8BF5D700A0B8D7 /* PersonDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonDataModel.swift; path = Infrastructure/Persistence/Models/PersonDataModel.swift; sourceTree = "<group>"; };
+		9C37A6531E8BF67E00A0B8D7 /* InMemoryDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InMemoryDataProvider.swift; path = Infrastructure/Persistence/Implementations/InMemoryDataProvider.swift; sourceTree = "<group>"; };
 		9C53976D1E8070E7003C772F /* MSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSButton.swift; path = Interfaces/Components/MSButton.swift; sourceTree = "<group>"; };
+		9C81B4061E8AA47900C281B8 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = Domain/Models/Person.swift; sourceTree = "<group>"; };
+		9C81B40A1E8AA93C00C281B8 /* PersonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonService.swift; path = Domain/Services/PersonService.swift; sourceTree = "<group>"; };
+		9C81B40D1E8AAF2F00C281B8 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonTableViewCell.swift; path = Interfaces/ViewControllers/Person/PersonTableViewCell.swift; sourceTree = "<group>"; };
 		9CA0ADBB1E7C75EB00FD13C5 /* Second.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Second.storyboard; path = Interfaces/Storyboards/Second.storyboard; sourceTree = "<group>"; };
 		9CA0ADBD1E7C75F700FD13C5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Interfaces/ViewControllers/ViewController.swift; sourceTree = "<group>"; };
 		9CC3846B1E7C17AD00595171 /* SwiftSeedProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSeedProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +41,7 @@
 		9CC384781E7C17AD00595171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CC3847A1E7C17AD00595171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CC3848B1E7C576800595171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/First.storyboard; sourceTree = "<group>"; };
+		9CE8071D1E89AEEF001DEF3E /* PersonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonTableViewController.swift; path = Interfaces/ViewControllers/PersonTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,12 +55,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C37A64E1E8BDB4500A0B8D7 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				9C37A6501E8BF1D400A0B8D7 /* Implementations */,
+				9C37A64F1E8BF1CF00A0B8D7 /* Models */,
+			);
+			name = Persistence;
+			sourceTree = "<group>";
+		};
+		9C37A64F1E8BF1CF00A0B8D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9C37A6511E8BF5D700A0B8D7 /* PersonDataModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9C37A6501E8BF1D400A0B8D7 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				9C37A6531E8BF67E00A0B8D7 /* InMemoryDataProvider.swift */,
+			);
+			name = Implementations;
+			sourceTree = "<group>";
+		};
 		9C53976F1E8070ED003C772F /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				9C53976D1E8070E7003C772F /* MSButton.swift */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		9C81B4051E8AA45700C281B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9C81B4061E8AA47900C281B8 /* Person.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9C81B4091E8AA90A00C281B8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9C81B40A1E8AA93C00C281B8 /* PersonService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		9C81B40C1E8AAEF700C281B8 /* Persons */ = {
+			isa = PBXGroup;
+			children = (
+				9CE8071D1E89AEEF001DEF3E /* PersonTableViewController.swift */,
+				9C81B40D1E8AAF2F00C281B8 /* PersonTableViewCell.swift */,
+			);
+			name = Persons;
+			sourceTree = "<group>";
+		};
+		9C81B4121E8AD1D000C281B8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9C37A64B1E8BDA2300A0B8D7 /* DataProvider.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		9CA0ADB91E7C75AD00FD13C5 /* Application */ = {
@@ -59,6 +131,9 @@
 		9CA0ADBA1E7C75BF00FD13C5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				9C81B4121E8AD1D000C281B8 /* Protocols */,
+				9C81B4091E8AA90A00C281B8 /* Services */,
+				9C81B4051E8AA45700C281B8 /* Models */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -66,6 +141,7 @@
 		9CA0ADC11E7C763A00FD13C5 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				9C37A64E1E8BDB4500A0B8D7 /* Persistence */,
 			);
 			name = Infrastructure;
 			sourceTree = "<group>";
@@ -124,6 +200,7 @@
 		9CC384851E7C299E00595171 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9C81B40C1E8AAEF700C281B8 /* Persons */,
 				9CA0ADBD1E7C75F700FD13C5 /* ViewController.swift */,
 			);
 			name = ViewControllers;
@@ -203,8 +280,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C81B4071E8AA47900C281B8 /* Person.swift in Sources */,
+				9CE8071E1E89AEEF001DEF3E /* PersonTableViewController.swift in Sources */,
+				9C37A6521E8BF5D700A0B8D7 /* PersonDataModel.swift in Sources */,
+				9C37A64C1E8BDA2300A0B8D7 /* DataProvider.swift in Sources */,
+				9C81B40B1E8AA93C00C281B8 /* PersonService.swift in Sources */,
+				9C37A6541E8BF67E00A0B8D7 /* InMemoryDataProvider.swift in Sources */,
 				9CA0ADBE1E7C75F700FD13C5 /* ViewController.swift in Sources */,
 				9C53976E1E8070E7003C772F /* MSButton.swift in Sources */,
+				9C81B40E1E8AAF2F00C281B8 /* PersonTableViewCell.swift in Sources */,
 				9CC3846F1E7C17AD00595171 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
