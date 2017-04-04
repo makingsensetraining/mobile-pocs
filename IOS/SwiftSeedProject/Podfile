@@ -6,7 +6,11 @@ target 'SwiftSeedProject' do
   use_frameworks!
 
   # Pods for SwiftSeedProject
-  pod 'Bond', '6.2.1'
+
   pod 'Dip', '5.0.4'
   pod 'Dip-UI', '1.0.2'
+  pod 'Bond', '6.2.3'
+  pod 'Alamofire', '4.4'
+  pod 'SwiftyJSON', '3.1.4'
+
 end

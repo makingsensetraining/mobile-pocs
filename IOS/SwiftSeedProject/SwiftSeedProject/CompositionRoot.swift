@@ -15,12 +15,10 @@ extension DependencyContainer {
         return DependencyContainer { container in
             
 // MARK: - Services
-
-            
-
+            container.register(.singleton) { Api() as Api }
 
 // MARK: - View Models
-            container.register { LoginViewModel() as LoginViewModel}
+            container.register { try LoginViewModel(api: container.resolve()) as LoginViewModel }
 
 // MARK: - View Controllers
             
@@ -30,6 +28,7 @@ extension DependencyContainer {
             }
             
             DependencyContainer.uiContainers = [container]
+
         }
     }
     
