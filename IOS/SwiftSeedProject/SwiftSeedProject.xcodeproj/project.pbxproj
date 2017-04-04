@@ -21,10 +21,11 @@
 		9CC384791E7C17AD00595171 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC384771E7C17AD00595171 /* LaunchScreen.storyboard */; };
 		9CC3848F1E7C5DCE00595171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC384721E7C17AD00595171 /* Main.storyboard */; };
 		9CC384901E7C5DCE00595171 /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC3848A1E7C576800595171 /* First.storyboard */; };
+		A0C57A281E952563000FE2F3 /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C57A271E952563000FE2F3 /* CompositionRoot.swift */; };
 		AF5BB7E62878075C53CFA8CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF2003A7FA62CBCEAE2C528 /* QuartzCore.framework */; };
 		CFD20DB7CDBD459136173991 /* Pods_SwiftSeedProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8F48835EA276FF78C3D5C2 /* Pods_SwiftSeedProject.framework */; };
-		D3176B531E9293E600AC4561 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		D3176B551E92960F00AC4561 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		D3176B531E9293E600AC4561 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		D3176B551E92960F00AC4561 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		D3176B571E92ACFB00AC4561 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3176B561E92ACFB00AC4561 /* LoginViewController.swift */; };
 		D3176B591E92AD0500AC4561 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3176B581E92AD0500AC4561 /* LoginViewModel.swift */; };
 		E33C0DD2D3B540E021E9BAA6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164F9150B8A87DAFC813001D /* CoreMedia.framework */; };
@@ -50,6 +51,7 @@
 		9CC384781E7C17AD00595171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CC3847A1E7C17AD00595171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CC3848B1E7C576800595171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/First.storyboard; sourceTree = "<group>"; };
+		A0C57A271E952563000FE2F3 /* CompositionRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
 		A88D3D1641357C3B1C689902 /* Pods-SwiftSeedProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSeedProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftSeedProject/Pods-SwiftSeedProject.release.xcconfig"; sourceTree = "<group>"; };
 		D3176B561E92ACFB00AC4561 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Interfaces/ViewControllers/LoginViewController.swift; sourceTree = "<group>"; };
 		D3176B581E92AD0500AC4561 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Interfaces/ViewModels/LoginViewModel.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				D3176B4F1E9292D800AC4561 /* ViewModels */,
+				A0C57A271E952563000FE2F3 /* CompositionRoot.swift */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -333,8 +336,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3176B551E92960F00AC4561 /* BuildFile in Sources */,
-				D3176B531E9293E600AC4561 /* BuildFile in Sources */,
+				D3176B551E92960F00AC4561 /* (null) in Sources */,
+				D3176B531E9293E600AC4561 /* (null) in Sources */,
+				A0C57A281E952563000FE2F3 /* CompositionRoot.swift in Sources */,
 				D3176B591E92AD0500AC4561 /* LoginViewModel.swift in Sources */,
 				9C53976E1E8070E7003C772F /* MSButton.swift in Sources */,
 				D3176B571E92ACFB00AC4561 /* LoginViewController.swift in Sources */,

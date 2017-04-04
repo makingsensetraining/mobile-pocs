@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DYP-ok-hYl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DYP-ok-hYl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--FIRST-->
         <scene sceneID="EDc-bR-YIA">
             <objects>
-                <viewController title="FIRST" id="DYP-ok-hYl" customClass="LoginViewController" customModule="SwiftSeedProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" title="FIRST" id="DYP-ok-hYl" customClass="LoginViewController" customModule="SwiftSeedProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cPQ-e6-nZK"/>
                         <viewControllerLayoutGuide type="bottom" id="hx1-pj-XHZ"/>
@@ -73,6 +73,9 @@
                             <constraint firstItem="6ge-4h-mx1" firstAttribute="top" secondItem="cPQ-e6-nZK" secondAttribute="bottom" constant="200" id="eql-Jf-NYc"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="dipTag" value="LoginVC"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="emailTextField" destination="105-7q-uYu" id="leD-3J-AQd"/>
                         <outlet property="loginButton" destination="6ge-4h-mx1" id="azI-jl-iTB"/>
