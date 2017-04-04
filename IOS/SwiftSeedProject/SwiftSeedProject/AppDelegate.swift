@@ -13,10 +13,9 @@ import Dip
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private var container: DependencyContainer!
+    private let container = DependencyContainer.configure()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        container = DependencyContainer.configure()
         BuddyBuildSDK.setup()
         
         // Override point for customization after application launch.

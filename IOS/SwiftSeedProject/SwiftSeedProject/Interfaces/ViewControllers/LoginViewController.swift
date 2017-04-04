@@ -9,12 +9,15 @@
 import UIKit
 import Bond
 import Dip_UI
+import Dip
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet var nameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
-    @IBOutlet var loginButton: UIButton!
+    @IBOutlet var getButton: UIButton!
+    @IBOutlet var putButton: UIButton!
+    @IBOutlet var postButton: UIButton!
     
     var viewModel: LoginViewModel!
     
@@ -24,11 +27,19 @@ class LoginViewController: UIViewController {
     }
     
     private func bindViewModel() {
+        viewModel.name.bidirectionalBind(to: nameTextField.reactive.text).dispose(in: reactive.bag)
         viewModel.email.bidirectionalBind(to: emailTextField.reactive.text).dispose(in: reactive.bag)
-        viewModel.password.bidirectionalBind(to: passwordTextField.reactive.text).dispose(in: reactive.bag)
-        loginButton.reactive.tap
+        getButton.reactive.tap
             .observe { _ in
-                self.viewModel.login()
+                self.viewModel.getRandomUser()
+            }.dispose(in: reactive.bag)
+        putButton.reactive.tap
+            .observe { _ in
+                self.viewModel.updateUser()
+            }.dispose(in: reactive.bag)
+        postButton.reactive.tap
+            .observe { _ in
+                self.viewModel.createUser()
             }.dispose(in: reactive.bag)
     }
 
