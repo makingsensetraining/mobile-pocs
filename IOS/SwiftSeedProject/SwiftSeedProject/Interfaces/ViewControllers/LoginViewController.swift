@@ -8,6 +8,7 @@
 
 import UIKit
 import Bond
+import Dip_UI
 
 class LoginViewController: UIViewController {
 
@@ -15,7 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
     
-    let viewModel = LoginViewModel()
+    var viewModel: LoginViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,3 +33,5 @@ class LoginViewController: UIViewController {
     }
 
 }
+
+extension LoginViewController: StoryboardInstantiatable { }
