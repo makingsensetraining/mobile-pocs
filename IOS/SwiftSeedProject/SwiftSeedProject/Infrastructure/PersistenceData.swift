@@ -20,7 +20,7 @@ class PersistenceData: Persistence {
     }
     
     public func getAll<T: PersistenceObject>(entityName: String) -> [T] {
-        let objectContext = coreDataManager.privateChildManagedObjectContext()
+        let objectContext = coreDataManager.mainManagedObjectContext
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         
         do {
@@ -28,44 +28,48 @@ class PersistenceData: Persistence {
             return fetchedObjects
         } catch let error as NSError {
             fatalError("Failed to fetch \(entityName): \(error)")
-            print("Could not getAll. \(error), \(error.userInfo)")
         }
         return []
     }
     
-    public func getBy<T: PersistenceObject>(entityIdentifier: Int, entityName: String) -> T {
-        let objectContext = coreDataManager.privateChildManagedObjectContext()
-        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        fetch.predicate = NSPredicate(format: "identifier == %@", entityIdentifier)
+    public func getBy<T: PersistenceObject>(entityIdentifier: String, entityName: String) -> T? {
+        let objectContext = coreDataManager.mainManagedObjectContext
+        let fetch: NSFetchRequest<NSFetchRequestResult> = T.fetchRequest()
+        fetch.predicate = NSPredicate(format: "(identifier = %@)", entityIdentifier)
+        fetch.fetchLimit = 1
         do {
-            let fetchedObjects = try objectContext.fetch(fetch) as! T
-            return fetchedObjects
+            let fetchedObjects = try objectContext.fetch(fetch)
+            return fetchedObjects.count > 0 ? fetchedObjects.item(at: 0) as? T : nil
         } catch let error as NSError {
             fatalError("Failed to fetch \(entityName): \(error)")
-            print("Could not getBy. \(error), \(error.userInfo)")
         }
     }
     
-    public func add(attributes: [String : AnyObject], entityName: String) {
-        let objectContext = coreDataManager.privateChildManagedObjectContext()
+    public func add<T: PersistenceObject>(attributes: [String : AnyObject]? = nil, entityName: String) -> T {
+        let objectContext = coreDataManager.mainManagedObjectContext
         let entity = NSEntityDescription.entity(forEntityName: entityName, in: objectContext)!
         let entityModel = NSManagedObject(entity: entity, insertInto: objectContext)
         
-        for (key, value) in attributes {
-            entityModel.setValue(value, forKey: key)
+        if let attributes = attributes {
+            for (key, value) in attributes {
+                entityModel.setValue(value, forKey: key)
+            }
         }
         do {
             try objectContext.save()
+            return entityModel as! T
         } catch let error as NSError {
             fatalError("Failed to save one new \(entityName): \(error)")
-            print("Could not save one new Entity. \(error), \(error.userInfo)")
         }
-        entityHasChanged(entity: entityName)
     }
     
     public func addAll<T: PersistenceObject>(entity: [T], entityName: String) {
         preconditionFailure("This method must be completed")
         entityHasChanged(entity: entityName)
+    }
+    
+    public func save() {
+        coreDataManager.saveChanges()
     }
     
     public func getNotificationTagfor(entity: String) -> String {

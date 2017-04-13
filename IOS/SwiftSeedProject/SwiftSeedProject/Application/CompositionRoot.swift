@@ -19,21 +19,21 @@ extension DependencyContainer {
             container.register{ PersistenceData(coreDataManager: try! container.resolve() as CoreDataStack) as Persistence }
             
 // MARK: - Services
-            container.register(.singleton) { Api() as Api }
+            container.register(.singleton) { try RestClient(persistence: container.resolve()) as RestClient }
             
             //Comment: to mock the service we need to use Persistence mock
-            container.register(){ BroadcastService(persistence: try! container.resolve()) as BroadcastService}
-            container.register(){ ArticleService(persistence: try! container.resolve()) as ArticleService}
-            container.register(){ SourceService(persistence: try! container.resolve()) as SourceService}
-            container.register(){ LibraryService(persistence: try! container.resolve()) as LibraryService}
+            container.register(){ try BroadcastService(persistence: container.resolve(), newsApiRestClient: container.resolve() as RestClient) as BroadcastService}
+            container.register(){ try ArticleService(persistence: container.resolve(), newsApiRestClient: container.resolve() as RestClient) as ArticleService}
+            container.register(){ try SourceService(persistence: container.resolve(), newsApiRestClient: container.resolve() as RestClient) as SourceService}
+            container.register(){ try LibraryService(persistence: container.resolve(), newsApiRestClient: container.resolve() as RestClient) as LibraryService}
             
 // MARK: - View Models
-            container.register { try LoginViewModel(api: container.resolve() as Api) as LoginViewModel }
+            container.register { try SourceListViewModel(sourceService: container.resolve() as SourceService) as SourceListViewModel }
 
 // MARK: - View Controllers
-            container.register(tag: "LoginVC") { LoginViewController() }
+            container.register(tag: "SourceListVC") { SourceListViewController() }
                 .resolvingProperties { container, controller in
-                    controller.viewModel = try container.resolve() as LoginViewModel
+                    controller.viewModel = try container.resolve() as SourceListViewModel
             }
             
             DependencyContainer.uiContainers = [container]

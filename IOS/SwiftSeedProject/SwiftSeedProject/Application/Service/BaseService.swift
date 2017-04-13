@@ -10,19 +10,19 @@ import Foundation
 
 class BaseService<T: PersistenceObject>  {
     
-    private let persistence: Persistence
-    private let restClient: AnyObject? = nil
-    
-    //TODO: we should inclued the API access also
-    init(persistence: Persistence) {
+    internal let persistence: Persistence!
+    internal let newsApiRestClient: RestClient!
+
+    init(persistence: Persistence, newsApiRestClient: RestClient) {
         self.persistence = persistence
+        self.newsApiRestClient = newsApiRestClient
     }
     
     public func getAll() -> [T] {
         return persistence.getAll(entityName: T.EntityName)
     }
     
-    public func getEntityBy(identifier: Int) -> T {
+    public func getEntityBy(identifier: String) -> T? {
         return persistence.getBy(entityIdentifier: identifier, entityName: T.EntityName)
     }
     

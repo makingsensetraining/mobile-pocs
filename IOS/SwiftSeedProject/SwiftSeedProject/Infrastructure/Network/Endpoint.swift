@@ -11,40 +11,40 @@ import Alamofire
 
 enum Endpoint {
     
-    case GetUser(userId: String)
-    case UpdateUser(userId: String)
-    case CreateUser()
+    case GetSources(category: SourceCategory?, language: Language?, country: Country?)
+    case GetArticles(source: Source, sortBy: String?)
     
     // MARK: - Public Properties
     var method: Alamofire.HTTPMethod {
         switch self {
-            case .GetUser:
+            case .GetSources:
                 return .get
-            case .UpdateUser:
-                return .put
-            case .CreateUser:
-                return .post
+            case .GetArticles:
+                return .get
         }
     }
     
     var url: URL {
-        let baseUrl = NSURL.getBaseUrl()
+        let baseUrl = URL.getBaseUrl()
         switch self {
-            case .GetUser(let userId):
-                return baseUrl.appendingPathComponent("users/\(userId)")!
-            case .UpdateUser(let userId):
-                return baseUrl.appendingPathComponent("users/\(userId)")!
-            case .CreateUser():
-                return baseUrl.appendingPathComponent("users")!
+            case .GetSources(let category, let language, let country):
+                let url = baseUrl.appendingPathComponent("sources")
+                return URL(string: "?category=\(category != nil ? category!.rawValue : "")&language=\(language != nil ? language!.rawValue : "")&country=\(country != nil ? country!.rawValue : "")", relativeTo: url)!
+            case .GetArticles(let source, let sortBy):
+                let url = baseUrl.appendingPathComponent("articles")
+                guard let sortBy = sortBy else {
+                    return URL(string: "?source=\(source.identifier)", relativeTo: url)!
+                }
+                return URL(string: "?source=\(source.identifier)&sortBy=\(sortBy)", relativeTo: url)!
         }
     }
 }
 
-private extension NSURL {
-    static func getBaseUrl() -> NSURL {
+private extension URL {
+    static func getBaseUrl() -> URL {
         guard let info = Bundle.main.infoDictionary,
             let urlString = info["Base URL"] as? String,
-            let url = NSURL(string: urlString) else {
+            let url = URL(string: urlString) else {
                 fatalError("Cannot get base url from Info.plist")
         }
         

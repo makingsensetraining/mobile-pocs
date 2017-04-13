@@ -8,11 +8,20 @@
 
 import Foundation
 import CoreData
+import SwiftyJSON
 
 @objc(Article)
 public class Article: PersistenceObject {
 
     class override var EntityName: String {
         return "Article"
+    }
+    
+    override func updateWithJSON(json: JSON) {
+        self.author = json["author"].stringValue
+        self.detail = json["description"].stringValue
+        self.url = URL(string: json["url"].stringValue)!
+        self.urlToImage = URL(string: json["urlToImage"].stringValue)!
+        self.publishedAt = DateUtils.parse(dateString: json["publishedAt"].stringValue) as NSDate
     }
 }
