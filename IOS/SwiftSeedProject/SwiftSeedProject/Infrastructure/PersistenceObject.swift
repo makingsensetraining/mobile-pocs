@@ -10,8 +10,8 @@ import CoreData
 
 public class PersistenceObject:  NSManagedObject {
     
-    //TODO: I need to investigate a bit more about this and how solve it problem
-    static func getEntityName() -> String {
-        preconditionFailure("This method must be overridden")
+    class var EntityName: String {
+        return ""
     }
+    
 }
