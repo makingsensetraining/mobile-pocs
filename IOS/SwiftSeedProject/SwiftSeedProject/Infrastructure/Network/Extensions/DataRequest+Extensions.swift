@@ -30,13 +30,12 @@ extension DataRequest: ApiRequestProtocol {
     }
     
     static func sanitizeError(json: JSON) -> Result<JSON> {
-        if !json["error"].exists() {
+        if json["status"].stringValue == "ok" {
             return .success(json)
         }
 
-        let code = json["error"]["code"].intValue
-        let message = json["error"]["message"].stringValue
-        let error = NSError(domain: bundleNameKey(), code: code, userInfo: [NSLocalizedDescriptionKey : message])
+        let message = json["message"].stringValue
+        let error = NSError(domain: bundleNameKey(), code: ErrorCode.Undefined, userInfo: [NSLocalizedDescriptionKey : message])
         return .failure(error)
     }
     

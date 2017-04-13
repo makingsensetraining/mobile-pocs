@@ -10,9 +10,8 @@ import CoreData
 
 protocol Persistence {
     func getAll<T: PersistenceObject>(entityName: String) -> [T]
-    func getBy<T: PersistenceObject>(entityIdentifier: Int, entityName: String) -> T
-    func add(attributes: [String : AnyObject], entityName: String)
+    func getBy<T: PersistenceObject>(entityIdentifier: String, entityName: String) -> T?
+    func add<T: PersistenceObject>(attributes: [String : AnyObject]?, entityName: String) -> T
+    func save()
     func getNotificationTagfor(entity: String) -> String
 }
-
-

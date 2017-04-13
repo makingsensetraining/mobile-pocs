@@ -19,8 +19,8 @@ extension Article {
     @NSManaged public var author: String?
     @NSManaged public var title: String?
     @NSManaged public var detail: String?
-    @NSManaged public var url: String?
-    @NSManaged public var urlToImage: String?
+    @NSManaged public var url: URL?
+    @NSManaged public var urlToImage: URL?
     @NSManaged public var publishedAt: NSDate?
     @NSManaged public var identifier: Int16
     @NSManaged public var library: Library?

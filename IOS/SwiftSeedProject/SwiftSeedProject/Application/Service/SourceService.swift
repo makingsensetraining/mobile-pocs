@@ -11,6 +11,11 @@ import Foundation
 final class SourceService: BaseService<Source> {
     
     public override func updateLocalStoreWithServerInfo() {
-        //TODO: We should add the API CALL HERE
+        newsApiRestClient.getSources(language: Language.English) { [weak self] result in
+            guard let strongSelf = self else {
+                return
+            }
+            NotificationCenter.default.post(name: strongSelf.getNotificationKeyName(), object: nil)
+        }
     }
 }
