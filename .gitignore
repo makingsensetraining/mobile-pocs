@@ -261,5 +261,6 @@ __pycache__/
 *.pyc
 
 # CocoaPods generated folder
-Pods/
-Podfile.lock
+Swift-Seed/mobile-pocs/IOS/SwiftSeedProject/Pods/
+Swift-Seed/mobile-pocs/IOS/SwiftSeedProject/Podfile.lock
+IOS/SwiftSeedProject/Pods/

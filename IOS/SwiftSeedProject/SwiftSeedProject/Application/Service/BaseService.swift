@@ -23,7 +23,7 @@ class BaseService<T: PersistenceObject>  {
     }
     
     public func getEntityBy(identifier: String) -> T? {
-        return persistence.getBy(entityIdentifier: identifier, entityName: T.EntityName)
+        return persistence.getBy(entityIdentifier: identifier)
     }
     
     public func updateLocalStoreWithServerInfo() {

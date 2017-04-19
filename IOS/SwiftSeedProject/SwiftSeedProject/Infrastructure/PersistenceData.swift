@@ -32,17 +32,21 @@ class PersistenceData: Persistence {
         return []
     }
     
-    public func getBy<T: PersistenceObject>(entityIdentifier: String, entityName: String) -> T? {
+    public func getCustomBy<T: PersistenceObject>(attributeName: String, attributeValue: String) -> T? {
         let objectContext = coreDataManager.mainManagedObjectContext
         let fetch: NSFetchRequest<NSFetchRequestResult> = T.fetchRequest()
-        fetch.predicate = NSPredicate(format: "(identifier = %@)", entityIdentifier)
+        fetch.predicate = NSPredicate(format: "(%@ = %@)", attributeName, attributeValue)
         fetch.fetchLimit = 1
         do {
             let fetchedObjects = try objectContext.fetch(fetch)
             return fetchedObjects.count > 0 ? fetchedObjects.item(at: 0) as? T : nil
         } catch let error as NSError {
-            fatalError("Failed to fetch \(entityName): \(error)")
+            fatalError("Failed to fetch \(T.EntityName): \(error)")
         }
+    }
+    
+    public func getBy<T: PersistenceObject>(entityIdentifier: String) -> T? {
+        return getCustomBy(attributeName: "identifier", attributeValue: entityIdentifier)
     }
     
     public func add<T: PersistenceObject>(attributes: [String : AnyObject]? = nil, entityName: String) -> T {

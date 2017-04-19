@@ -8,9 +8,13 @@
 
 import Foundation
 
-final class LibraryService: BaseService<Article> {
+final class LibraryService: BaseService<Library> {
     
     public override func updateLocalStoreWithServerInfo() {
         //TODO: We should add the API CALL HERE
+    }
+    
+    public func getEntityBy(source: String) -> Library? {
+           return persistence.getCustomBy(attributeName: "library.source", attributeValue: source)
     }
 }

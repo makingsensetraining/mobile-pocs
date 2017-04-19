@@ -8,6 +8,9 @@ PODS:
   - Dip-UI (1.0.2):
     - Dip (~> 5.0)
   - ReactiveKit (3.5.1)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -15,6 +18,7 @@ DEPENDENCIES:
   - Bond (= 6.2.3)
   - Dip (= 5.0.4)
   - Dip-UI (= 1.0.2)
+  - SDWebImage (= 4.0.0)
   - SwiftyJSON (= 3.1.4)
 
 SPEC CHECKSUMS:
@@ -24,8 +28,9 @@ SPEC CHECKSUMS:
   Dip: 6460091adcf84ae8765f4927b85b49e6a3b67bfe
   Dip-UI: 7f03e0bc332fdda3cdf1d9a05125e5f30374dff1
   ReactiveKit: aa0faf668053e7fddd6a07829ba3696741cbff37
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 5f8e9feaddbc1873bffb44026b9068d54aa45fc4
+PODFILE CHECKSUM: e420622f9bb09bf60fa2f1616283ad4bbd9b6823
 
 COCOAPODS: 1.2.0
