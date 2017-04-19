@@ -18,7 +18,7 @@ extension RestClient {
             }
             let sources = json["sources"].arrayValue.map { (json: JSON) -> Source in
                 let id = json["id"].stringValue
-                let source = strongSelf.persistence.getBy(entityIdentifier: id, entityName: Source.EntityName) as Source? ?? strongSelf.persistence.add(attributes: nil, entityName: Source.EntityName) as! Source
+                let source = strongSelf.persistence.getBy(entityIdentifier: id) as Source? ?? strongSelf.persistence.add(attributes: nil, entityName: Source.EntityName) as! Source
                 source.updateWithJSON(json: json)
                 return source
             }

@@ -29,11 +29,17 @@ extension DependencyContainer {
             
 // MARK: - View Models
             container.register { try SourceListViewModel(sourceService: container.resolve() as SourceService) as SourceListViewModel }
+            container.register { try NewsFeedViewModel(libraryService: container.resolve() as LibraryService) as NewsFeedViewModel }
 
 // MARK: - View Controllers
             container.register(tag: "SourceListVC") { SourceListViewController() }
                 .resolvingProperties { container, controller in
                     controller.viewModel = try container.resolve() as SourceListViewModel
+            }
+            
+            container.register(tag: "NewsFeedCollectionViewController") { NewsFeedCollectionViewController() }
+                .resolvingProperties { container, controller in
+                    controller.viewModel = try container.resolve() as NewsFeedViewModel
             }
             
             DependencyContainer.uiContainers = [container]
