@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 struct RestClientConfiguration {
-    static var manager: ApiManagerProtocol {
+    static var manager: RestClientManagerProtocol {
         return SessionManager.default
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ApiResult.swift
+//  DataResult.swift
 //  SwiftSeedProject
 //
 //  Created by Brian Sztamfater on 4/4/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ApiResult<Value> {
+enum DataResult<Value> {
     case Success(value: Value)
     case Failure(error: NSError)
     
