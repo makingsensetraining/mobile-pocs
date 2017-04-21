@@ -10,6 +10,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-protocol ApiRequestProtocol {
-    func apiResponse(completionHandler: @escaping (DataResponse<JSON>) -> Void) -> Self
+protocol RestClientRequestProtocol {
+    func getResponse(errorSanitizer: @escaping (JSON) -> Result<JSON>, completionHandler: @escaping (DataResponse<JSON>) -> Void) -> Self
 }

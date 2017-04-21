@@ -9,19 +9,17 @@
 import Foundation
 import Alamofire
 
-extension SessionManager: ApiManagerProtocol {
+extension SessionManager: RestClientManagerProtocol {
     
-    func apiRequest(endpoint: Endpoint, parameters: [String : AnyObject]? = nil, headers: [String : String]? = nil) -> ApiRequestProtocol {
-        guard let info = Bundle.main.infoDictionary,
-            let apiKey = info["NewsApi API Key"] as? String else {
-                fatalError("Cannot get API Key from Info.plist")
+    func sendRequest(target: Target, parameters: [String : AnyObject]? = nil, headers: [String : String]? = nil) -> RestClientRequestProtocol {
+        var httpHeaders = ["Accept" : "application/json"]
+        if let targetSpecificHeaders = target.commonHeaders {
+            httpHeaders += targetSpecificHeaders
         }
-        // Insert your common headers here, for example, authorization token or accept.
-        var commonHeaders = ["Accept" : "application/json", "X-Api-Key" : apiKey]
         if let headers = headers {
-            commonHeaders += headers
+            httpHeaders += headers
         }
         
-        return request(endpoint.url, method: endpoint.method, parameters: parameters, encoding: JSONEncoding.default, headers: commonHeaders)
+        return request(target.url, method: target.method, parameters: parameters, encoding: JSONEncoding.default, headers: httpHeaders)
     }
 }

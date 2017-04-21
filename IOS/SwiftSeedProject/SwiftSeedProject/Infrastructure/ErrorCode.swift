@@ -8,4 +8,5 @@
 
 struct ErrorCode {
     static let Undefined = -9999
+    static let SerializationFailed = 1001
 }

@@ -1,21 +1,27 @@
 //
-//  Endpoint.swift
+//  NewsApiEndpoint.swift
 //  SwiftSeedProject
 //
-//  Created by Brian Sztamfater on 3/4/17.
+//  Created by Brian Sztamfater on 20/4/17.
 //  Copyright © 2017 Making Sense. All rights reserved.
 //
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
-enum Endpoint {
+enum NewsApiTarget: Target {
+    
+    var baseUrl: URL { return URL(string: "https://newsapi.org/v1")! }
+    var apiKey: String? { return "983e399a3d2840759a3688c3abd91d77" }
+    // Insert your common headers here, for example, authorization token or accept.
+    var commonHeaders: [String : String]? { return ["X-Api-Key" : apiKey!] }
     
     case GetSources(category: SourceCategory?, language: Language?, country: Country?)
     case GetArticles(source: Source, sortBy: String?)
     
     // MARK: - Public Properties
-    var method: Alamofire.HTTPMethod {
+    var method: HTTPMethod {
         switch self {
             case .GetSources:
                 return .get
@@ -25,7 +31,6 @@ enum Endpoint {
     }
     
     var url: URL {
-        let baseUrl = URL.getBaseUrl()
         switch self {
             case .GetSources(let category, let language, let country):
                 let url = baseUrl.appendingPathComponent("sources")
@@ -38,16 +43,16 @@ enum Endpoint {
                 return URL(string: "?source=\(source.identifier)&sortBy=\(sortBy)", relativeTo: url)!
         }
     }
-}
-
-private extension URL {
-    static func getBaseUrl() -> URL {
-        guard let info = Bundle.main.infoDictionary,
-            let urlString = info["Base URL"] as? String,
-            let url = URL(string: urlString) else {
-                fatalError("Cannot get base url from Info.plist")
+    
+    var errorSanitizer: (JSON) -> Result<JSON> {
+        return { json in
+            if json["status"].stringValue == "ok" {
+                return .success(json)
+            }
+            
+            let message = json["message"].stringValue
+            let error = NSError(domain: InfoUtils.bundleNameKey(), code: ErrorCode.Undefined, userInfo: [NSLocalizedDescriptionKey : message])
+            return .failure(error)
         }
-        
-        return url
     }
 }
