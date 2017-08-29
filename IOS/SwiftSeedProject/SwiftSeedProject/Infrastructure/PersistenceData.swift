@@ -69,7 +69,6 @@ class PersistenceData: Persistence {
     
     public func addAll<T: PersistenceObject>(entity: [T], entityName: String) {
         preconditionFailure("This method must be completed")
-        entityHasChanged(entity: entityName)
     }
     
     public func save() {
