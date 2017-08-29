@@ -7,7 +7,7 @@ target 'SwiftSeedProject' do
 
   # Pods for SwiftSeedProject
 
-  pod 'Dip', '5.0.4'
+  pod 'Dip', '5.1'
   pod 'Dip-UI', '1.0.2'
   pod 'Bond', '6.2.4'
   pod 'Alamofire', '4.4'
