@@ -1,8 +1,8 @@
 import React from 'react';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import LoginScreen from './screens/LoginScreen';
-import EmployeesScreen from './screens/EmployeesScreen';
-import CreateEmployeeScreen from './screens/CreateEmployeeScreen';
+import ProductsScreen from './screens/ProductsScreen';
+import CreateProductScreen from './screens/CreateProductScreen';
 
 const RouterComponent = () => {
 	return (
@@ -15,13 +15,13 @@ const RouterComponent = () => {
 				<Scene key="mainFlow">
 					<Scene 
 					rightTitle = "Add"
-					onRight={() => { Actions.createEmployeeScreen() }}
+					onRight={() => { Actions.createProductScreen() }}
 					key="employeesScreen" 
-					component={EmployeesScreen}
-					title="Employees"
+					component={ProductsScreen}
+					title="Products"
 					initial
 					/>
-					<Scene key="createEmployeeScreen" component={CreateEmployeeScreen} title="Create Employee" />
+					<Scene key="createProductScreen" component={CreateProductScreen} title="Create Product" />
 				</Scene>
 			</Scene>
 		</Router>

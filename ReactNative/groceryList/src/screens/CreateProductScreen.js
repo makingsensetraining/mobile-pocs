@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-class CreateEmployeeScreen extends Component {
+class CreateProductScreen extends Component {
 	render() {
 		return (
 			<View>
-				<Text>Employee Form</Text>
+				<Text>Product Form</Text>
 			</View>
 		);
 	}
 }
 
-export default CreateEmployeeScreen;
+export default CreateProductScreen;
