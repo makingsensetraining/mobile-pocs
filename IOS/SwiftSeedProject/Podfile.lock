@@ -7,7 +7,15 @@ PODS:
   - Dip (5.1)
   - Dip-UI (1.0.2):
     - Dip (~> 5.0)
+<<<<<<< CAP-212-Creation-of-app-using-RN-and-Redux
+<<<<<<< CAP-212-Creation-of-app-using-RN-and-Redux
   - ReactiveKit (3.5.5)
+=======
+  - ReactiveKit (3.5.1)
+>>>>>>> [MLP-162]Create news feed screen
+=======
+  - ReactiveKit (3.5.5)
+>>>>>>> [MLP-191] Fix problem with Bond library
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
@@ -16,6 +24,11 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 4.4)
   - Bond (= 6.2.4)
+<<<<<<< CAP-212-Creation-of-app-using-RN-and-Redux
+  - Dip (= 5.1)
+=======
+  - Dip (= 5.0.4)
+>>>>>>> [MLP-191] Fix problem with Bond library
   - Dip (= 5.1)
   - Dip-UI (= 1.0.2)
   - SDWebImage (= 4.0.0)
@@ -27,10 +40,27 @@ SPEC CHECKSUMS:
   Diff: befa1d19c32726b2b36ce915d98793e2fbde8dcc
   Dip: f5a7bd4e1a8af48516e4adc0952d6efc29015589
   Dip-UI: 7f03e0bc332fdda3cdf1d9a05125e5f30374dff1
+<<<<<<< CAP-212-Creation-of-app-using-RN-and-Redux
+<<<<<<< CAP-212-Creation-of-app-using-RN-and-Redux
   ReactiveKit: ced30f9647912f74510bd8179790cf2dfc9454c8
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
+PODFILE CHECKSUM: 95ca610d990bb6024a4071c9ebdef3945f90c37c
+=======
+  ReactiveKit: aa0faf668053e7fddd6a07829ba3696741cbff37
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: e420622f9bb09bf60fa2f1616283ad4bbd9b6823
+>>>>>>> [MLP-162]Create news feed screen
+=======
+  ReactiveKit: ced30f9647912f74510bd8179790cf2dfc9454c8
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 3ce4c514618289dc1c2b8ef882ced93c16cf4c15
+>>>>>>> [MLP-191] Fix problem with Bond library
 PODFILE CHECKSUM: 95ca610d990bb6024a4071c9ebdef3945f90c37c
 
 COCOAPODS: 1.2.1
