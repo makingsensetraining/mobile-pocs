@@ -16,7 +16,7 @@ const RouterComponent = () => {
 					<Scene 
 					rightTitle = "Add"
 					onRight={() => { Actions.createProductScreen() }}
-					key="employeesScreen" 
+					key="productsScreen" 
 					component={ProductsScreen}
 					title="Products"
 					initial
