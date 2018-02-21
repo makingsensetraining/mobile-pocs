@@ -40,7 +40,7 @@ class LoginScreen extends Component {
         <Card>
           <CardLayout>
             <Input
-              caption="Email"
+              label="Email"
               placeholder="youremail@gmail.com"
               value={this.props.email}
               onChangeText={(text) => this.props.emailUpdate(text)}
@@ -49,7 +49,7 @@ class LoginScreen extends Component {
 
           <CardLayout>
             <Input
-              caption="Password"
+              label="Password"
               placeholder="password"
               value={this.props.password}
               onChangeText={(text) => this.props.passwordUpdate(text)}
