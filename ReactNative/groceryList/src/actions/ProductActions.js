@@ -7,10 +7,10 @@ import {
 } from './types';
 
 export const productUpdate = ({ prop, value}) => {
-    return {
-        type: PRODUCT_UPDATE,
-        payload: { prop, value}
-    };
+	return {
+		type: PRODUCT_UPDATE,
+		payload: { prop, value}
+	};
 };
 
 export const productCreate = ({ name, count, brand }) => {
@@ -18,11 +18,11 @@ export const productCreate = ({ name, count, brand }) => {
 
   return (dispatch) => {
     firebase.database().ref(`/users/${currentUser.uid}/products`)
-        .push({name, count, brand })
-        .then(() => {
-            dispatch({ type: PRODUCT_CREATE});
-            Actions.pop()
-        });
+		.push({name, count, brand })
+		.then(() => {
+			dispatch({ type: PRODUCT_CREATE});
+			Actions.pop()
+		});
   };
 };
 
