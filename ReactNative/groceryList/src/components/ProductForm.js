@@ -31,9 +31,9 @@ class ProductForm extends Component {
 				<CardLayout style={pickerContainer}>
 					<Text style={pickerTextStyle}>Brand</Text>
 					<Picker
-						style={{ flex: 1 }}
 						selectedValue={this.props.brand}
-						onValueChange={value => this.props.productUpdate({ prop: 'brand', value })}>
+						onValueChange={value => this.props.productUpdate({ prop: 'brand', value })}
+					>
 
 
 						<Picker.Item label="None" value="None" />
@@ -52,10 +52,11 @@ class ProductForm extends Component {
 
 const styles = {
 	pickerContainer: {
-	    flexDirection: 'column'
+		flexDirection: 'column'
   },
 	pickerTextStyle: {
 		fontSize: 18,
+		marginTop: 10,
 		paddingLeft: 20
 	}
 };

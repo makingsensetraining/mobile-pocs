@@ -34,8 +34,8 @@ export const productsFetch = () => {
 		firebase.database().ref(`/users/${currentUser.uid}/products`)
 			.on('value', snapshot => {
 				dispatch({ type: PRODUCTS_FETCH_SUCCESS, payload: snapshot.val() });
-
-		});
+			}
+		);
 	};
 };
 
@@ -51,3 +51,20 @@ export const productSave = ({ name, count, brand, uid }) => {
 			});
 	};
 };
+
+export const productDelete = ({ uid }) => {
+	const { currentUser } = firebase.auth();
+
+	return (dispatch) => {
+		firebase.database().ref(`/users/${currentUser.uid}/products/${uid}`)
+			.remove()
+			.then(() => {
+				// dispatch({ type: PRODUCT_SAVE_SUCCESS });
+				Actions.pop();
+			});
+	};
+}
+
+
+
+
