@@ -8,3 +8,4 @@ export const LOGIN_FAIL = 'login_fail';
 export const PRODUCT_UPDATE = 'product_update';
 export const PRODUCTS_FETCH_SUCCESS = 'product_fetch.success';
 export const PRODUCT_CREATE = 'product_create';
+export const PRODUCT_SAVE_SUCCESS = 'product_save_success';
