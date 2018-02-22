@@ -1,13 +1,30 @@
-import React, { Component } from 'react';
-import {
-  ListView,
-  TouchableOpacity
-} from 'react-native';
-import ProductItem from '../components/ProductItem';
-import { connect } from 'react-redux';
-import { productsFetch } from '../actions/ProductActions';
-import _ from 'lodash';
 
+				<Text> Product List </Text>
+			</View>
+		);
+	}
+}
+
+const styles = {
+  container: {
+    flex: 1,
+  },
+};
+
+const mapStateToProps = state => {
+  const products = _.map(state.products, (val, uid) => {
+    return { ...val, uid };
+  });
+
+  return { products };
+};
+
+export default connect(mapStateToProps, { productsFetch })(ProductsScreen);
+
+				<Text> Product List </Text>
+			</View>
+		);
+	}
 class ProductsScreen extends Component {
 
   componentWillMount() {
