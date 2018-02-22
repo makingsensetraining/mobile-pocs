@@ -18,7 +18,6 @@ class LoginScreen extends Component {
 
   onButtonPress() {
     const { email, password } = this.props;
-
     this.props.performLogin({ email, password });
   }
 
@@ -83,8 +82,6 @@ const styles = {
 };
 
 const mapStateToProps = state => {
-  console.log(state);
-
   const { email, password, loading, error } = state.authentication;
 
   return { email, password, loading, error };

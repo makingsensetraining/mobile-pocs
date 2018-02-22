@@ -13,21 +13,21 @@ const RouterComponent = () => {
           <Scene key="loginScreen" component={LoginScreen} title="Please Login" />
         </Scene>
 
-				<Scene key="mainFlow">
-					<Scene 
-					rightTitle = "Add"
-					onRight={() => { Actions.createProductScreen() }}
-					key="productsScreen" 
-					component={ProductsScreen}
-					title="Products"
-					initial
-					/>
-					<Scene key="createProductScreen" component={CreateProductScreen} title="Create Product" />
-					<Scene key="editProductScreen" component={EditProductScreen} title="Edit Product" />
-				</Scene>
-			</Scene>
-		</Router>
-	);
+        <Scene key="mainFlow">
+          <Scene 
+            rightTitle="Add"
+            onRight={() => { Actions.createProductScreen()}}
+            key="productsScreen" 
+            component={ProductsScreen}
+            title="Products"
+            initial
+          />
+            <Scene key="createProductScreen" component={CreateProductScreen} title="Create Product" />
+            <Scene key="editProductScreen" component={EditProductScreen} title="Edit Product" />
+        </Scene>
+      </Scene>
+    </Router>
+  );
 };
 
 export default RouterComponent;

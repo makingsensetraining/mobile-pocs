@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {
+import { 
   ListView,
   TouchableOpacity
 } from 'react-native';
@@ -12,12 +12,10 @@ class ProductsScreen extends Component {
 
   componentWillMount() {
     this.props.productsFetch();
-
     this.createDataSource(this.props);
   }
 
   componentWillReceiveProps(newProps) {
-    console.log('receive props');
     this.createDataSource(newProps);
   }
 
@@ -47,8 +45,8 @@ class ProductsScreen extends Component {
 
 const styles = {
   container: {
-    flex: 1,
-  },
+    flex: 1
+  }
 };
 
 const mapStateToProps = state => {

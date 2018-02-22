@@ -37,7 +37,6 @@ export const performLogin = ({email, password}) => {
 
 const loginSuccess = (dispatch) => {
   dispatch({ type: LOGIN_SUCCEED });
-
   Actions.mainFlow();
 };
 

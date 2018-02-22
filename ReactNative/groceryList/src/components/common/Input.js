@@ -1,5 +1,9 @@
 import React, { Component, } from 'react'
-import { View, Text, TextInput } from 'react-native'
+import {
+  View,
+  Text,
+  TextInput
+} from 'react-native'
 
 const Input = ({ label, placeholder, value, onChangeText, secureTextEntry }) => {
   const { inputStyle, captionStyle, textInputStyle } = styles;
@@ -24,18 +28,18 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'center',
     flex: 1,
-    height: 40,
+    height: 40
   },
   captionStyle: {
     fontSize: 14,
     width: 80,
-    marginLeft: 10,
+    marginLeft: 10
   },
   textInputStyle: {
     flex: 1,
     width: null,
     height: null,
-    fontSize: 14,
+    fontSize: 14
   }
 };
 

@@ -14,7 +14,6 @@ const INITIAL_STATE = {
 };
 
 export default (state = INITIAL_STATE, action) => {
-
   switch (action.type) {
     case EMAIL_UPDATE:
       return { ...state, email: action.payload };

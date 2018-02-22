@@ -4,7 +4,7 @@ import ProductFormReducer from './ProductFormReducer';
 import ProductReducer from './ProductReducer';
 
 export default combineReducers({
-	authentication: AuthenticationReducer,
-	productForm: ProductFormReducer,
-	products: ProductReducer 
+  authentication: AuthenticationReducer,
+  productForm: ProductFormReducer,
+  products: ProductReducer 
 });
