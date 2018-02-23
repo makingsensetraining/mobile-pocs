@@ -90,6 +90,4 @@ const mapStateToProps = state => {
   return { email, password, loading, error };
 }
 
-export default connect(mapStateToProps, {
-  emailUpdate, passwordUpdate, performLogin
-})(LoginScreen);
+export default connect(mapStateToProps, { emailUpdate, passwordUpdate, performLogin })(LoginScreen);
