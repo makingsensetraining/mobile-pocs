@@ -3,7 +3,8 @@ import { Actions } from 'react-native-router-flux';
 import {
 	PRODUCT_UPDATE,
 	PRODUCT_CREATE,
-	PRODUCTS_FETCH_SUCCESS
+	PRODUCTS_FETCH_SUCCESS,
+	PRODUCT_SAVE_SUCCESS
 } from './types';
 
 export const productUpdate = ({ prop, value}) => {
@@ -21,7 +22,7 @@ export const productCreate = ({ name, count, brand }) => {
 		.push({name, count, brand })
 		.then(() => {
 			dispatch({ type: PRODUCT_CREATE});
-			Actions.pop()
+			Actions.pop();
 		});
   };
 };
@@ -35,5 +36,18 @@ export const productsFetch = () => {
 				dispatch({ type: PRODUCTS_FETCH_SUCCESS, payload: snapshot.val() });
 
 		});
+	};
+};
+
+export const productSave = ({ name, count, brand, uid }) => {
+	const { currentUser } = firebase.auth();
+
+	return (dispatch) => {
+		firebase.database().ref(`/users/${currentUser.uid}/products/${uid}`)
+			.set({ name, count, brand })
+			.then(() => {
+				dispatch({ type: PRODUCT_SAVE_SUCCESS });
+				Actions.pop();
+			});
 	};
 };
