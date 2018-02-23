@@ -3,24 +3,24 @@ import {
   Text,
   TouchableOpacity
 } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import { CardLayout } from './common';
 
 class ProductItem extends Component {
 
   onRowPress() {
-    const { product } = this.props;
-    const { uid, name, count, brand } = product;
+    Actions.editProductScreen({ product: this.props.product });
   }
 
   render() {
     return (
-      <CardLayout>
-        <TouchableOpacity onPress={this.onRowPress.bind(this)}>
+      <TouchableOpacity onPress={this.onRowPress.bind(this)}>
+        <CardLayout>
           <Text style={styles.textStyle}>
             {this.props.product.name} - {this.props.product.brand} 
           </Text>
-        </TouchableOpacity>
-      </CardLayout>
+        </CardLayout>
+      </TouchableOpacity>
     );
   }
 }
